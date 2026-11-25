@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semih | Yapay zekâ ve teknoloji</title>
+<meta name="description" content="Yeni yapay zekâ araçları, hazır promptlar ve pratik dijital ipuçları. Türkçe, sade, hemen uygulanabilir.">
+<meta property="og:title" content="Semih | semihdigital">
+<meta property="og:description" content="Yapay zekâ araçları, hazır promptlar ve dijital ipuçları.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #120a24;
+    --panel: #1b1136;
+    --line: #2f2152;
+    --violet: #8b5cf6;
+    --lav: #c4b5fd;
+    --text: #ece7f7;
+    --muted: #a094c0;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--text);
+    font: 400 1.0625rem/1.65 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background: radial-gradient(60rem 30rem at 85% -10%, rgba(139,92,246,.22), transparent 60%);
+    pointer-events: none;
+  }
+  .wrap { position: relative; max-width: 46rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  a { color: var(--lav); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--lav); outline-offset: 3px; border-radius: 6px; }
+
+  header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 4.5rem; }
+  .brand { display: flex; align-items: center; gap: .75rem; font: 700 1.125rem var(--display); text-decoration: none; color: var(--text); }
+  .mark { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: block; object-fit: cover; }
+  .btn { display: inline-block; padding: .65rem 1.25rem; border-radius: 999px; font: 500 .95rem var(--body); text-decoration: none; background: var(--violet); color: #fff; border: 0; cursor: pointer; transition: background .15s; }
+  .btn:hover { background: #7c3aed; }
+  .btn.ghost { background: transparent; color: var(--lav); border: 1px solid var(--line); }
+  .btn.ghost:hover { background: var(--panel); }
+
+  h1 { font: 700 clamp(2.4rem, 7.5vw, 4.2rem)/1.04 var(--display); letter-spacing: -.03em; margin: 0 0 1.25rem; max-width: 13em; }
+  .lead { color: var(--muted); max-width: 34rem; margin: 0 0 2rem; }
+
+  .prompt { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; min-height: 5.5rem; font: 400 1rem/1.6 ui-monospace, "SF Mono", Consolas, monospace; color: var(--text); }
+  .prompt .cur { display: inline-block; width: .55ch; height: 1.1em; background: var(--violet); vertical-align: text-bottom; margin-left: 2px; animation: blink 1s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+
+  section { margin-top: 5rem; }
+  h2 { font: 700 1.75rem/1.2 var(--display); letter-spacing: -.02em; margin: 0 0 1.5rem; }
+  .topics { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .topics li { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+  .topics strong { font: 700 1.05rem var(--display); }
+  .topics span { color: var(--muted); }
+
+  .ready { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; }
+  .ready p { margin: 0 0 1rem; color: var(--muted); }
+  .ready blockquote { margin: 0 0 1.25rem; padding-left: 1rem; border-left: 3px solid var(--violet); color: var(--text); }
+
+  footer { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; }
+
+  @media (max-width: 36rem) {
+    header { margin-bottom: 3rem; }
+    .topics li { grid-template-columns: 1fr; gap: .15rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .prompt .cur { animation: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#top"><img class="mark" src="logo.jpg" alt="semihdigital logosu" width="40" height="40">semihdigital</a>
+    <a class="btn ghost" href="https://x.com/semihdigital" target="_blank" rel="noopener">X’te takip et</a>
+  </header>
+
+  <main id="top">
+    <h1>Yapay zekâyı işine yarar hâle getir.</h1>
+    <p class="lead">Yeni AI araçlarını deniyor, işe yarayanı sadeleştirip Türkçe paylaşıyorum. Hazır promptlar ve pratik dijital ipuçları burada.</p>
+
+    <div class="prompt" aria-live="off"><span id="typed"></span><span class="cur" aria-hidden="true"></span></div>
+    <div class="actions">
+      <a class="btn" href="https://x.com/semihdigital" target="_blank" rel="noopener">Paylaşımlara bak</a>
+      <a class="btn ghost" href="#hazir">Hazır prompt al</a>
+    </div>
+
+    <section>
+      <h2>Neler paylaşıyorum?</h2>
+      <ul class="topics">
+        <li><strong>Yapay zekâ araçları</strong><span>Sunum, video, araştırma ve tasarım için yeni araçlar ve ne işe yaradıkları.</span></li>
+        <li><strong>Hazır promptlar</strong><span>Kopyalayıp kullanabileceğin, Türkçe ve sade komutlar.</span></li>
+        <li><strong>Dijital ipuçları</strong><span>Zaman kazandıran küçük yöntemler ve teknoloji notları.</span></li>
+      </ul>
+    </section>
+
+    <section id="hazir">
+      <h2>Bugünün promptu</h2>
+      <div class="ready">
+        <p>Dil öğrenmeye başlamak için bir plan çıkarttırır.</p>
+        <blockquote id="readyText">Bana İngilizce öğrenmem için net, düzenli bir plan oluştur. Öğrenmeyi şu aşamalara ayır: sıfırdan başlangıç, günlük konuşma, cümle kurma, dilbilgisi ve gerçek senaryolarda pratik.</blockquote>
+        <button class="btn" id="copyBtn" type="button">Promptu kopyala</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="yr"></span> semihdigital. Geleceği birlikte keşfedelim.</footer>
+</div>
+
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  var prompts = [
+    "Bana bu hafta için basit bir çalışma planı hazırla.",
+    "Bu uzun metni 5 maddeyle özetle ve önemli olanı vurgula.",
+    "Küçük işletmem için 7 günlük içerik takvimi oluştur."
+  ];
+  var el = document.getElementById("typed");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduce) {
+    el.textContent = prompts[0];
+  } else {
+    var p = 0, i = 0, deleting = false;
+    (function tick() {
+      var full = prompts[p];
+      el.textContent = full.slice(0, i);
+      var wait = deleting ? 18 : 45;
+      if (!deleting && i === full.length) { deleting = true; wait = 1800; }
+      else if (deleting && i === 0) { deleting = false; p = (p + 1) % prompts.length; wait = 400; }
+      else { i += deleting ? -1 : 1; }
+      setTimeout(tick, wait);
+    })();
+  }
+
+  var btn = document.getElementById("copyBtn");
+  btn.addEventListener("click", function () {
+    var text = document.getElementById("readyText").textContent;
+    var done = function () { btn.textContent = "Kopyalandı"; setTimeout(function () { btn.textContent = "Promptu kopyala"; }, 2000); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { btn.textContent = "Kopyalanamadı"; });
+    } else { btn.textContent = "Kopyalanamadı"; }
+  });
+</script>
+</body>
+</html>
